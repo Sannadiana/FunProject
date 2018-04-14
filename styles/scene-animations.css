@@ -1,0 +1,817 @@
+
+
+/* make sure scene#1 is the default scene, when none is selected */
+#scene-0,
+#scene-0 .scene-wrapper,
+#scene-1,
+#scene-1 .scene-wrapper {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+/* if any target is selected, move scene 0 and 1 out of the way */
+.targets:target ~ #scenes #scene-0,
+.targets:target ~ #scenes #scene-1 {
+  opacity: 0;
+  transform: translate3d(0, 100%, 0);
+}
+.targets:target ~ #scenes #scene-0 .scene-wrapper,
+.targets:target ~ #scenes #scene-1 .scene-wrapper {
+  transform: translate3d(0, -100%, 0);
+}
+
+/* if scene-0 is selected, show scene 0 and 1 */
+#scene-0-start:target ~ #scenes #scene-0,
+#scene-0-start:target ~ #scenes #scene-0 .scene-wrapper {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+#scene-0-start:target ~ #scenes #scene-1,
+#scene-0-start:target ~ #scenes #scene-1 .scene-wrapper {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+/* if scene-1 is selected, show scene 1 */
+#scene-1-start:target ~ #scenes #scene-1,
+#scene-1-start:target ~ #scenes #scene-1 .scene-wrapper,
+#scene-1-crash1:target ~ #scenes #scene-1,
+#scene-1-crash1:target ~ #scenes #scene-1 .scene-wrapper,
+#scene-1-crash2:target ~ #scenes #scene-1,
+#scene-1-crash2:target ~ #scenes #scene-1 .scene-wrapper {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+/* show star animation when scene 0, 1 or 2 is selected */
+#scene-1 .stars-background-alpha {
+  animation: stars-background-translation-vertical 100s linear infinite;
+}
+#scene-1 .stars-background-beta {
+  animation: stars-background-translation-vertical 80s linear infinite;
+}
+#scene-1 .stars-background-gamma {
+  animation: stars-background-translation-vertical 60s linear infinite;
+}
+/*
+  Here we have a slight problem, in general we enable animations
+  when a scene is selected/active, but since scene 0 and 1 should be
+  visible when no scene is scelected, i.ex;
+    http://...index.html -> should be the same as
+    http://...index.html#scene-0-start
+  we cant rely on selecting scene and apply animation, we need to
+  reverse the login, assume the scene 0/1 is visible, and stop
+  then when any other scene is selected.
+*/
+#scene-3-start:target ~ #scenes #scene-1 .starts-background-alpha,
+#scene-3-start:target ~ #scenes #scene-1 .starts-background-beta,
+#scene-3-start:target ~ #scenes #scene-1 .starts-background-gamma,
+#scene-3-engage:target ~ #scenes .starts-background-alpha,
+#scene-3-engage:target ~ #scenes .starts-background-beta,
+#scene-3-engage:target ~ #scenes .starts-background-gamma,
+#scene-4-start:target ~ #scenes .starts-background-alpha,
+#scene-4-start:target ~ #scenes .starts-background-beta,
+#scene-4-start:target ~ #scenes .starts-background-gamma,
+#scene-4-pickup:target ~ #scenes .starts-background-alpha,
+#scene-4-pickup:target ~ #scenes .starts-background-beta,
+#scene-4-pickup:target ~ #scenes .starts-background-gamma,
+#scene-4-escape:target ~ #scenes .starts-background-alpha,
+#scene-4-escape:target ~ #scenes .starts-background-beta,
+#scene-4-escape:target ~ #scenes .starts-background-gamma,
+#scene-4-5-explosion:target ~ #scenes .starts-background-alpha,
+#scene-4-5-explosion:target ~ #scenes .starts-background-beta,
+#scene-4-5-explosion:target ~ #scenes .starts-background-gamma,
+#scene-5-start:target ~ #scenes .starts-background-alpha,
+#scene-5-start:target ~ #scenes .starts-background-beta,
+#scene-5-start:target ~ #scenes .starts-background-gamma,
+#scene-6-start:target ~ #scenes .starts-background-alpha,
+#scene-6-start:target ~ #scenes .starts-background-beta,
+#scene-6-start:target ~ #scenes .starts-background-gamma,
+#scene-7-start:target ~ #scenes .starts-background-alpha,
+#scene-7-start:target ~ #scenes .starts-background-beta,
+#scene-7-start:target ~ #scenes .starts-background-gamma {
+  animation: none;
+}
+
+/* same problem describe earlier about scene 0, 1 selection and applying animation */
+#scene-1 #fighterJetX {
+	animation: jetAnimX 10s infinite;
+}
+#scenes-1 #fighterJetY {
+	animation: jetAnimY 10s infinite;
+}
+#scene-3-start:target ~ #scenes #fighterJetX,
+#scene-3-engage:target ~ #scenes #fighterJetX,
+#scene-4-start:target ~ #scenes #fighterJetX,
+#scene-4-pickup:target ~ #scenes #fighterJetX,
+#scene-4-escape:target ~ #scenes #fighterJetX,
+#scene-4-5-explosion:target ~ #scenes #fighterJetX,
+#scene-5-start:target ~ #scenes #fighterJetX,
+#scene-6-start:target ~ #scenes #fighterJetX,
+#scene-7-start:target ~ #scenes #fighterJetX,
+#scene-3-start:target ~ #scenes #fighterJetY,
+#scene-3-engage:target ~ #scenes #fighterJetY,
+#scene-4-start:target ~ #scenes #fighterJetY,
+#scene-4-pickup:target ~ #scenes #fighterJetY,
+#scene-4-escape:target ~ #scenes #fighterJetY,
+#scene-4-5-explosion:target ~ #scenes #fighterJetY,
+#scene-5-start:target ~ #scenes #fighterJetY,
+#scene-6-start:target ~ #scenes #fighterJetY,
+#scene-7-start:target ~ #scenes #fighterJetY {
+  animation: none;
+}
+
+/* same problem describe earlier about scene 0, 1 selection and applying animation */
+#scene-1 #weaponAnimation {
+  animation: weaponArm 8s 3s ease-in-out infinite;
+}
+#scene-3-start:target ~ #scenes #weaponAnimation,
+#scene-3-engage:target ~ #scenes #weaponAnimation,
+#scene-4-start:target ~ #scenes #weaponAnimation,
+#scene-4-pickup:target ~ #scenes #weaponAnimation,
+#scene-4-escape:target ~ #scenes #weaponAnimation,
+#scene-4-5-explosion:target ~ #scenes #weaponAnimation,
+#scene-5-start:target ~ #scenes #weaponAnimation,
+#scene-6-start:target ~ #scenes #weaponAnimation,
+#scene-7-start:target ~ #scenes #weaponAnimation {
+  animation: none;
+}
+
+/* hover effect on launch buttons */
+#scene-1-start:target ~ #scenes #launch-buttons a:hover span {
+  opacity: 1;
+}
+
+#scene-1 .rocket-flame {
+  opacity: 0;
+}
+
+#scene-1-start:target ~ #scenes #text1 {
+  animation: textHover 3s ease-in-out infinite;
+}
+/*****
+	scene 1 LAUNCH (using scene-2-start)
+***/
+#scene-2-start:target ~ #scenes #launch-buttons {
+  transition: opacity 500ms 500ms ease-in, transform 250ms ease-in-out;
+  opacity: 0.2;
+  transform: translate3d(-5px, 0, 0) rotateZ(-45deg);
+}
+#scene-2-start:target ~ #scenes #launch-buttons #launch-60deg span {
+  opacity: 1;
+}
+#scene-2-start:target ~ #scenes #text1 {
+  animation: opacity0 1s linear forwards;
+}
+#scene-2-start:target ~ #scenes #scene-1 .rocket {
+  animation: rocket-boost-60deg 1500ms ease-in-out forwards;
+  animation-delay: 500ms;
+}
+#scene-2-start:target ~ #scenes #scene-1 .rocket-r {
+  transition: transform 1000ms ease-in-out;
+  transition-delay: 1000ms;
+  transform: rotateZ(20deg);
+}
+#scene-2-start:target ~ #scenes #scene-1 .rocket-fins,
+#scene-2-start:target ~ #scenes #scene-1 .rocket-window {
+  animation: rocket-inertia 1750ms 500ms ease-in-out forwards,
+    rocket-inertia 500ms 1900ms ease-in-out forwards;
+}
+#scene-2-start:target ~ #scenes #scene-1 .rocket-flame {
+  animation: rocket-boost-flame 2s forwards;
+}
+#scene-2-start:target ~ #scenes #scene-1 .rocket-flame-wrapper {
+  animation: asteroid-jiggle 100ms linear;
+  animation-iteration-count: 7;
+}
+#scene-2-start:target ~ #scenes #scene-1 .rocket-y {
+  transition: transform 500ms 2000ms ease-in;
+  transform: translate3d(0, -60vh, 0);
+}
+#scene-2-start:target ~ #scenes #scene-1 #northkorea-tank,
+#scene-1-crash1:target ~ #scenes #scene-1 #northkorea-tank,
+#scene-1-crash2:target ~ #scenes #scene-1 #northkorea-tank {
+  animation: tank-animation 5000ms forwards;
+}
+#scene-2-start:target ~ #scenes #scene-1 #northkorea-asset {
+  animation: asset-animation 10s forwards;
+}
+#scene-2-start:target ~ #scenes #scene-1 #northkorea-tank2,
+#scene-1-crash1:target ~ #scenes #scene-1 #northkorea-tank2,
+#scene-1-crash2:target ~ #scenes #scene-1 #northkorea-tank2 {
+  animation: tank-animation2 3000ms forwards;
+}
+#scene-2-start:target ~ #scenes #scene-1 #northkorea-asset2 {
+  animation: asset-animation 10s forwards;
+}
+/*****
+	scene 1 CRASH1
+***/
+#scene-1-crash1:target ~ #scenes #starpling {
+  animation: scaleBlink 1s 5500ms ease-in-out alternate 2;
+}
+#scene-1-crash1:target ~ #scenes #scene-1-resetDiv {
+  animation: opacity1 1s 6s forwards;
+  display: block;
+}
+#scene-1-crash1:target ~ #scenes #launch-buttons {
+  transition: opacity 500ms 500ms ease-in;
+  opacity: 0.2;
+}
+#scene-1-crash1:target ~ #scenes #launch-90deg span {
+  opacity: 1;
+}
+#scene-1-crash1:target ~ #scenes #text1 {
+  animation: opacity0 1s linear forwards;
+}
+#scene-1-crash1:target ~ #scenes #scene-1 .rocket {
+  animation: rocket-boost-60deg 1500ms 500ms ease-in-out forwards;
+}
+#scene-1-crash1:target ~ #scenes #scene-1 .rocket-x {
+  animation: rocket-leave 400ms 2000ms ease-in forwards;
+}
+#scene-1-crash1:target ~ #scenes #scene-1 .rocket-y {
+  animation: rocket-crash1 3000ms 2600ms ease-in forwards;
+}
+#scene-1-crash1:target ~ #scenes #scene-1 .rocket-fins,
+#scene-1-crash1:target ~ #scenes #scene-1 .rocket-window {
+  animation: rocket-inertia 1750ms 500ms ease-in-out forwards,
+    rocket-inertia 500ms 1900ms ease-in-out forwards;
+}
+#scene-1-crash1:target ~ #scenes #scene-1 .rocket-flame {
+  animation: rocket-boost-flame 2s forwards;
+}
+#scene-1-crash1:target ~ #scenes #scene-1 .rocket-flame-wrapper {
+  animation: asteroid-jiggle 100ms linear;
+  animation-iteration-count: 7;
+}
+#scene-1-crash1:target ~ #scenes #scene-1 #northkorea-asset {
+  animation: asset-animation 10s forwards;
+}
+#scene-1-crash1:target ~ #scenes #scene-1 #northkorea-asset2 {
+  animation: asset-animation 10s forwards;
+}
+
+/***
+	scene 1 CRASH2
+****/
+#scene-1-crash2:target ~ #scenes #flames {
+  animation: opacity1 0.3s 5500ms forwards;
+}
+#scene-1-crash2:target ~ #scenes #scene-1-resetDiv {
+  animation: opacity1 1s 7s forwards;
+  display: block;
+}
+#scene-1-crash2:target ~ #scenes #launch-buttons {
+  transition: opacity 500ms 500ms ease-in, transform 250ms ease-in-out;
+  opacity: 0.2;
+  transform: translate3d(5px, 0, 0) rotateZ(45deg);
+}
+#scene-1-crash2:target ~ #scenes #launch-120deg span {
+  opacity: 1;
+}
+#scene-1-crash2:target ~ #scenes #text1 {
+  animation: opacity0 1s linear forwards;
+}
+#scene-1-crash2:target ~ #scenes #scene-1 .rocket {
+  animation: rocket-boost-60deg 1500ms 500ms ease-in-out forwards;
+}
+#scene-1-crash2:target ~ #scenes #scene-1 .rocket-r {
+  transition: transform 1000ms ease-in-out;
+  transition-delay: 1000ms;
+  transform: rotateZ(-20deg);
+}
+#scene-1-crash2:target ~ #scenes #scene-1 .rocket-x {
+  animation: rocket-leave 400ms 2000ms ease-in forwards;
+}
+#scene-1-crash2:target ~ #scenes #scene-1 .rocket-y {
+  animation: rocket-crash2 3000ms 2600ms ease-in forwards;
+}
+#scene-1-crash2:target ~ #scenes #scene-1 .rocket-fins,
+#scene-1-crash2:target ~ #scenes #scene-1 .rocket-window {
+  animation: rocket-inertia 1750ms 500ms ease-in-out forwards,
+    rocket-inertia 500ms 1900ms ease-in-out forwards;
+}
+#scene-1-crash2:target ~ #scenes #scene-1 .rocket-flame {
+  animation: rocket-boost-flame 2s forwards;
+}
+#scene-1-crash2:target ~ #scenes #scene-1 .rocket-flame-wrapper {
+  animation: asteroid-jiggle 100ms linear;
+  animation-iteration-count: 7;
+}
+#scene-1-crash2:target ~ #scenes #scene-1 #northkorea-asset {
+  animation: asset-animation 10s forwards;
+}
+#scene-1-crash2:target ~ #scenes #scene-1 #northkorea-asset2 {
+  animation: asset-animation 10s forwards;
+}
+
+/* if scene-2 is selected, show scene 2 */
+#scene-2-start:target ~ #scenes #scene-2,
+#scene-2-start:target ~ #scenes #scene-2 .scene-wrapper {
+  opacity: 1;
+  transition-delay: 2500ms;
+  transform: translate3d(0, 0, 0);
+}
+#scene-2-start:target ~ #scenes #scene-1,
+#scene-2-start:target ~ #scenes #scene-1 .scene-wrapper {
+  transition-delay: 2500ms;
+}
+
+/***
+	scene 2 animations
+****/
+#scene-2-start:target ~ #scenes #earthMove {
+  animation: earthLeft 3s ease-in 5500ms forwards;
+}
+#scene-2-start:target ~ #scenes #earth,
+#scene-3-start:target ~ #scenes #earth {
+  animation: earthSpin 40s linear forwards;
+  animation-delay: 2500ms;
+}
+#scene-2-start:target ~ #scenes #spaceshipX,
+#scene-3-start:target ~ #scenes #spaceshipX {
+  animation: leaveX 6s ease-in-out forwards;
+  animation-delay: 2500ms;
+}
+#scene-2-start:target ~ #scenes #spaceshipY,
+#scene-3-start:target ~ #scenes #spaceshipY {
+  animation: leaveY 4s ease-in forwards;
+  animation-delay: 2500ms;
+}
+#scene-2-start:target ~ #scenes #spaceshipHover,
+#scene-3-start:target ~ #scenes #spaceshipHover {
+  animation: hover 4s ease-in-out 3s infinite;
+  animation-delay: 2500ms;
+}
+#scene-2-start:target ~ #scenes #rocketT,
+#scene-3-start:target ~ #scenes #rocketT {
+  animation: rocketTrailTakeoffInnOut 0.1s linear 1s infinite alternate;
+  animation-delay: 2500ms;
+}
+#scene-2-start:target ~ #scenes #rocketTr,
+#scene-3-start:target ~ #scenes #rocketTr {
+  animation: rocketTrailTop 4s linear forwards;
+  animation-delay: 2500ms;
+}
+#scene-2-start:target ~ #scenes #spaceshipRotate,
+#scene-3-start:target ~ #scenes #spaceshipRotate {
+  animation: rotate 4s ease-in-out 1s forwards;
+  animation-delay: 2500ms;
+}
+#scene-2-start:target ~ #scenes #manualPopup,
+#scene-3-start:target ~ #scenes #manualPopup {
+  animation: showManual 10s ease-in-out;
+  animation-delay: 2500ms;
+}
+#scene-2-start:target ~ #scenes #warningPopup,
+#scene-3-start:target ~ #scenes #warningPopup {
+  animation: showWarning 8s ease-in-out;
+  animation-delay: 2500ms;
+}
+#scene-2-start:target ~ #scenes .warningIcon,
+#scene-3-start:target ~ #scenes .warningIcon {
+  animation: warningBob 1s ease-in-out infinite;
+  animation-delay: 2500ms;
+}
+#scene-2-start:target ~ #scenes #scene-2 .stars-background-alpha {
+  animation: stars-background-translation-horizontal 180s linear infinite;
+  animation-delay: 5500ms;
+}
+#scene-2-start:target ~ #scenes #scene-2 .stars-background-beta {
+  animation: stars-background-translation-horizontal 160s linear infinite;
+  animation-delay: 5500ms;
+}
+#scene-2-start:target ~ #scenes #scene-2 .stars-background-gamma {
+  animation: stars-background-translation-horizontal 140s linear infinite;
+  animation-delay: 5500ms;
+}
+
+/* if scene-3 is selected, show scene 3 */
+#scene-3-start:target ~ #scenes #scene-3,
+#scene-3-start:target ~ #scenes #scene-3 .scene-wrapper,
+#scene-3-engage:target ~ #scenes #scene-3,
+#scene-3-engage:target ~ #scenes #scene-3 .scene-wrapper {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+/* and move scene 2 out horizontally */
+#scene-3-start:target ~ #scenes #scene-2 {
+  transform: translate3d(-100%, 0, 0) !important;
+}
+#scene-3-start:target ~ #scenes #scene-2 .scene-wrapper {
+  transform: translate3d(100%, 0, 0) !important;
+}
+
+/*
+ * SCENE 3 stuffses
+ */
+
+#scene-3-start:target ~ #scenes #scene-3 .ship,
+#scene-3-engage:target ~ #scenes #scene-3 .ship {
+  animation: hover 4s ease-in-out infinite;
+}
+#scene-3-engage:target ~ #scenes #scene-3 .asteroid-ball {
+  animation: asteroids-translation 28s ease-in forwards;
+}
+#scene-3-engage:target ~ #scenes #scene-3 .asteroid-next-button {
+  animation: asteroids-translation 28s ease-out forwards;
+}
+#scene-3-engage:target ~ #scenes #scene-3 .asteroid-body {
+  animation: asteroid-jiggle 100ms linear infinite;
+}
+#scene-3-start:target ~ #scenes #scene-3 .stars-background-alpha,
+#scene-3-engage:target ~ #scenes #scene-3 .stars-background-alpha {
+  animation: stars-background-translation-horizontal 180s linear infinite;
+}
+#scene-3-start:target ~ #scenes #scene-3 .stars-background-beta,
+#scene-3-engage:target ~ #scenes #scene-3 .stars-background-beta {
+  animation: stars-background-translation-horizontal 160s linear infinite;
+}
+#scene-3-start:target ~ #scenes #scene-3 .stars-background-gamma,
+#scene-3-engage:target ~ #scenes #scene-3 .stars-background-gamma {
+  animation: stars-background-translation-horizontal 140s linear infinite;
+}
+#scene-3-start:target ~ #scenes #scene-3 #text3 {
+  animation: textHover 4s infinite;
+}
+#scene-3-engage:target ~ #scenes #scene-3 #text3 {
+  opacity: 0;
+  animation: remove-info-box 200ms 300ms linear forwards;
+}
+#scene-3-engage:target ~ #scenes #scene-3 .asteroid-start-button {
+  opacity: 0;
+  transform: scale(0.95);
+  animation: remove-info-box 200ms 300ms linear forwards;
+}
+#scene-3-engage:target ~ #scenes #scene-3 .asteroid-countdown {
+  display: block;
+}
+#scene-3-engage:target
+  ~ #scenes
+  #scene-3
+  .asteroid-countdown
+  span:nth-child(1) {
+  animation: asteroid-countdown 1000ms ease-in-out forwards;
+}
+#scene-3-engage:target
+  ~ #scenes
+  #scene-3
+  .asteroid-countdown
+  span:nth-child(2) {
+  animation: asteroid-countdown 1000ms 1000ms ease-in-out forwards;
+}
+#scene-3-engage:target
+  ~ #scenes
+  #scene-3
+  .asteroid-countdown
+  span:nth-child(3) {
+  animation: asteroid-countdown 1000ms 2000ms ease-in-out forwards;
+}
+#scene-3-engage:target ~ #scenes #scene-3 .asteroid-crash:hover,
+#scene-3-engage:target
+  ~ #scenes
+  #scene-3
+  .asteroid-ball:hover
+  ~ .asteroid-crash {
+  display: block;
+}
+#scene-3-engage:target ~ #scenes #scene-3 .asteroid-crash:hover ~ .ship {
+  display: none;
+}
+#scene-3-engage:target ~ #scenes #scene-3 .asteroid-arrow-up,
+#scene-3-engage:target ~ #scenes #scene-3 .asteroid-arrow-down {
+  opacity: 1;
+}
+#scene-3-engage:target
+  ~ #scenes
+  #scene-3
+  .asteroid-arrow-up:hover
+  ~ .ship
+  .ship-wrapper {
+  transform: translate3d(0, -64px, 0) rotateZ(90deg);
+}
+#scene-3-engage:target
+  ~ #scenes
+  #scene-3
+  .asteroid-arrow-down:hover
+  ~ .ship
+  .ship-wrapper {
+  transform: translate3d(0, 64px, 0) rotateZ(90deg);
+}
+#scene-3-engage:target
+  ~ #scenes
+  #scene-3
+  .asteroid-offside:hover
+  ~ .asteroid-highway
+  .asteroid-zone {
+  animation: zone-blinking 200ms linear infinite;
+}
+#scene-3-engage:target ~ #scenes #scene-3 .asteroid-highway {
+  cursor: crosshair !important;
+}
+
+/* if scene-4 is selected, show scene 4 */
+#scene-4-start:target ~ #scenes #scene-4,
+#scene-4-start:target ~ #scenes #scene-4 .scene-wrapper {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+/* and move scene 3 out horizontally */
+#scene-4-start:target ~ #scenes #scene-3 {
+  transform: translate3d(-100%, 0, 0) !important;
+}
+#scene-4-start:target ~ #scenes #scene-3 .scene-wrapper {
+  transform: translate3d(100%, 0, 0) !important;
+}
+/***
+  * scene 4 - Pickup Trump
+  ***/
+#scene-4-5-explosion:target ~ #scenes #spaceship4_div {
+  animation: spaceshipMoveTrump 4s ease-in-out forwards;
+}
+#scene-4-5-explosion:target ~ #scenes #trump4 {
+  animation: shrinkTrump 0.7s 1.8s forwards;
+}
+#choice1_4:hover,
+#pickupHover:hover {
+  opacity: 1;
+}
+/***
+  * Escape the problem
+  ***/
+#scene-5-start:target ~ #scenes #spaceship4_div {
+  animation: escapeX 4s ease-in forwards;
+}
+#scene-5-start:target ~ #scenes #spaceship4_y_div {
+  animation: escapeY 4s ease-in forwards;
+}
+#scene-5-start:target ~ #scenes #nestetmp4,
+#scene-5-start:target ~ #scenes #to-tweetsplosion {
+  display: block;
+}
+#choice2_4:hover,
+#escapeHover:hover {
+  opacity: 1;
+}
+
+/* if scene 4-5 is selected, show scene 4-5 */
+#scene-4-5-explosion:target ~ #scenes #scene-4-5,
+#scene-4-5-explosion:target ~ #scenes #scene-4-5 .scene-wrapper {
+  opacity: 1;
+  transition-delay: 2500ms;
+  transform: translate3d(0, 0, 0);
+}
+#scene-4-5-explosion:target ~ #scenes #scene-4,
+#scene-4-5-explosion:target ~ #scenes #scene-4 .scene-wrapper {
+  transition-delay: 2500ms;
+}
+/* and move scene 4 out horizontally */
+#scene-4-5-explosion:target ~ #scenes #scene-4 {
+  transform: translate3d(-100%, 0, 0) !important;
+}
+#scene-4-5-explosion:target ~ #scenes #scene-4 .scene-wrapper {
+  transform: translate3d(100%, 0, 0) !important;
+}
+#scene-4-5-explosion:target ~ #scenes #background452 {
+  animation: background45move 11s linear 1;
+}
+#scene-4-5-explosion:target ~ #scenes #spaceship45Thrust {
+  animation: rocketTrailInnOut45 1s linear infinite alternate;
+}
+#scene-4-5-explosion:target ~ #scenes #spaceship45Div {
+  animation: spaceshipMove 10s ease-in-out infinite, opacity0 0s 10.5s forwards;
+}
+#scene-4-5-explosion:target ~ #scenes #explosion {
+  animation: opacity1 0s 10s forwards 1, opacity0 0s 10.9s forwards 1;
+}
+#scene-4-5-explosion:target ~ #scenes #back45div {
+  animation: opacity1 1s 12s forwards;
+}
+/***
+*Tweets
+***/
+#scene-4-5-explosion:target ~ #scenes .tweet {
+  animation: tweetFly 2s linear infinite;
+}
+#scene-4-5-explosion:target ~ #scenes #tweet1 {
+  animation: tweetFly1 2s 1slinear infinite;
+}
+#scene-4-5-explosion:target ~ #scenes #tweet2 {
+  animation: tweetFly2 2s 4s linear infinite;
+}
+#scene-4-5-explosion:target ~ #scenes #tweet3 {
+  animation: tweetFly3 2s 8s linear infinite;
+}
+#scene-4-5-explosion:target ~ #scenes #tweet4 {
+  animation: tweetFly4 2s 2s linear infinite;
+}
+#scene-4-5-explosion:target ~ #scenes #tweet5 {
+  animation: tweetFly5 2s 9s linear infinite;
+}
+#scene-4-5-explosion:target ~ #scenes #tweet6 {
+  animation: tweetFly6 2s 5s linear infinite;
+}
+#scene-4-5-explosion:target ~ #scenes #tweet7 {
+  animation: tweetFly7 2s 3s linear infinite;
+}
+#scene-4-5-explosion:target ~ #scenes #tweet8 {
+  animation: tweetFly8 2s 10s linear infinite;
+}
+#scene-4-5-explosion:target ~ #scenes #tweet9 {
+  animation: tweetFly9 2s 6s linear infinite;
+}
+#scene-4-5-explosion:target ~ #scenes #tweet10 {
+  animation: tweetFly10 2s 9s linear infinite;
+}
+#scene-4-5-explosion:target ~ #scenes #tweet11 {
+  animation: tweetFly11 2s 2s linear infinite;
+}
+#scene-4-5-explosion:target ~ #scenes #tweet12 {
+  animation: tweetFly12 2s 4s linear infinite;
+}
+/***
+*Sparks
+***/
+#scene-4-5-explosion:target ~ #scenes #electricalSparks1 {
+  animation: sparksFlicker 1.5s 3s infinite linear;
+}
+#scene-4-5-explosion:target ~ #scenes #electricalSparks2 {
+  animation: sparksFlicker 1.2s 4.3s infinite linear;
+}
+#scene-4-5-explosion:target ~ #scenes #electricalSparks3 {
+  animation: sparksFlicker 1s 4.5s infinite linear;
+}
+
+/* if scene-5 is selected, show scene 5 */
+#scene-5-start:target ~ #scenes #scene-5,
+#scene-5-start:target ~ #scenes #scene-5 .scene-wrapper {
+  opacity: 1;
+  transition-delay: 2000ms;
+  transform: translate3d(0, 0, 0);
+}
+#scene-5-start:target ~ #scenes #scene-4,
+#scene-5-start:target ~ #scenes #scene-4 .scene-wrapper {
+  transition-delay: 2300ms;
+}
+/* and move scene 4 out horizontally */
+#scene-5-start:target ~ #scenes #scene-4 {
+  transform: translate3d(-100%, 0, 0) !important;
+}
+#scene-5-start:target ~ #scenes #scene-4 .scene-wrapper {
+  transform: translate3d(100%, 0, 0) !important;
+}
+#scene-5-start:target ~ #scenes #scene-5 #mars-jet-trail {
+  transform: translate3d(-100%, 0, 0);
+  transition-delay: 2300ms;
+  opacity: 1;
+}
+#scene-5-start:target ~ #scenes #scene-5 #mars-jet-trail .mars-jet-trail-mask {
+  transform: translate3d(100%, 0, 0);
+  transition-delay: 2300ms;
+}
+
+#scene-5-start:target ~ #scenes #scene-5 #mars-planet,
+#scene-6-start:target ~ #scenes #scene-5 #mars-planet {
+  transform: translate3d(-40vw, 10vw, 0);
+  transition-delay: 3300ms;
+}
+#scene-5-start:target ~ #scenes #scene-5 #mars-planet .mars-planet-wrapper,
+#scene-6-start:target ~ #scenes #scene-5 #mars-planet .mars-planet-wrapper {
+  transform: translate3d(0, 0, 0);
+  transition-delay: 3400ms;
+}
+
+#scene-5-start:target ~ #scenes #scene-5 #mars-ship .mars-ship-whopper,
+#scene-6-start:target ~ #scenes #scene-5 #mars-ship .mars-ship-whopper {
+  transform: translate3d(0vw, -60vw, 0) rotateZ(-5deg);
+  transition-delay: 3600ms;
+}
+
+#scene-5-start:target ~ #scenes #scene-5 #mars-ship .mars-ship-wrapper,
+#scene-6-start:target ~ #scenes #scene-5 #mars-ship .mars-ship-wrapper {
+  transform: translate3d(0px, 20px, 0) rotateZ(-1deg);
+  transition-delay: 3700ms;
+  transition-duration: 300ms;
+}
+
+#scene-5-start:target ~ #scenes #scene-5 #mars-ship .mars-ship-window,
+#scene-6-start:target ~ #scenes #scene-5 #mars-ship .mars-ship-window {
+  animation: window-ship-bounce 400ms 3700ms ease-in;
+}
+
+#scene-5-start:target ~ #scenes #scene-5 .mars-land-button,
+#scene-6-start:target ~ #scenes #scene-5 .mars-land-button {
+  animation: window-ship-bounce 400ms 3800ms ease-in;
+}
+
+#scene-5-start:target ~ #scenes #scene-5 .mars-land-button a,
+#scene-6-start:target ~ #scenes #scene-5 .mars-land-button a {
+  opacity: 1;
+  transition: opacity 400ms 3800ms linear;
+}
+
+/* if scene-6 is selected, show scene 6 */
+#scene-6-start:target ~ #scenes #scene-6,
+#scene-6-start:target ~ #scenes #scene-6 .scene-wrapper {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+/* and move scene 5 out vertically */
+#scene-6-start:target ~ #scenes #scene-5 {
+  transform: translate3d(0, -100%, 0);
+}
+#scene-6-start:target ~ #scenes #scene-5 .scene-wrapper {
+  transform: translate3d(0, 100%, 0);
+}
+#scene-6-start:target ~ #scenes #scene-6 .stars-background-alpha,
+#scene-7-start:target ~ #scenes #scene-6 .stars-background-alpha {
+  animation: stars-background-translation-vertical 100s linear infinite;
+}
+#scene-6-start:target ~ #scenes #scene-6 .stars-background-beta,
+#scene-7-start:target ~ #scenes #scene-6 .stars-background-beta {
+  animation: stars-background-translation-vertical 80s linear infinite;
+}
+#scene-6-start:target ~ #scenes #scene-6 .stars-background-gamma,
+#scene-7-start:target ~ #scenes #scene-6 .stars-background-gamma {
+  animation: stars-background-translation-vertical 60s linear infinite;
+}
+#scene-6-start:target ~ #scenes #earth6,
+#scene-7-start:target ~ #scenes #earth6 {
+  animation: earthSpin 50s linear infinite;
+}
+#scene-6-start:target ~ #scenes #mars6,
+#scene-7-start:target ~ #scenes #mars6 {
+  animation: marsLift 5s ease-out forwards;
+}
+#scene-6-start:target ~ #scenes #spaceshipDescent,
+#scene-7-start:target ~ #scenes #spaceshipDescent {
+  animation: landSequence 6s ease-out forwards;
+}
+#scene-6-start:target ~ #scenes #rocketT6,
+#scene-7-start:target ~ #scenes #rocketT6 {
+  animation: rocketTrailTakeoffInnOut 0.1s linear 1s infinite alternate;
+}
+#scene-6-start:target ~ #scenes #rocketTrailDiv,
+#scene-7-start:target ~ #scenes #rocketTrailDiv {
+  animation: rocketTrailGone 1s linear 7s forwards;
+}
+#scene-6-start:target ~ #scenes #nestetmp1,
+#scene-7-start:target ~ #scenes #nestetmp1 {
+  animation: nextFade 0.5s 7s linear forwards;
+}
+
+/* if scene-7 is selected, show scene 7 */
+#scene-7-start:target ~ #scenes #scene-7,
+#scene-7-start:target ~ #scenes #scene-7 .scene-wrapper {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+/* and move scene 6 out vertically */
+#scene-7-start:target ~ #scenes #scene-6 {
+  transform: translate3d(0, -100%, 0);
+}
+#scene-7-start:target ~ #scenes #scene-6 .scene-wrapper {
+  transform: translate3d(0, 100%, 0);
+}
+#scene-7-start:target ~ #scenes #scene-7 .stars-background-alpha {
+  animation: stars-background-translation-vertical 100s linear infinite;
+}
+#scene-7-start:target ~ #scenes #scene-7 .stars-background-beta {
+  animation: stars-background-translation-vertical 80s linear infinite;
+}
+#scene-7-start:target ~ #scenes #scene-7 .stars-background-gamma {
+  animation: stars-background-translation-vertical 60s linear infinite;
+}
+#scene-7-start:target ~ #scenes #elon {
+  animation: elon-popup 900ms 400ms ease-in-out forwards;
+}
+#scene-7-start:target ~ #scenes #elon-body {
+  animation: elon-popup-appendages 500ms 1000ms ease-in forwards;
+}
+#scene-7-start:target ~ #scenes #elon-hair {
+  animation: elon-popup-appendages 400ms 1200ms ease-in forwards;
+}
+#scene-7-start:target ~ #scenes #elon-ears {
+  animation: elon-popup-appendages 400ms 1100ms ease-in forwards;
+}
+#scene-7-start:target ~ #scenes #welcome {
+  animation: welcome 3s;
+}
+#scene-7-start:target ~ #scenes #earth7 {
+  animation: earthspin 50s infinite linear;
+}
+#scene-7-start:target ~ #scenes #teslax {
+  animation: teslax-move;
+  animation-duration: 1500ms;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+  animation-delay: 2s;
+}
+#scene-7-start:target ~ #scenes #teslay {
+  animation: teslay-move;
+  animation-duration: 1500ms;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-delay: 2s;
+}

@@ -1,0 +1,219 @@
+
+
+#to-tweetsplosion {
+  position: absolute;
+  display: none;
+  z-index: 10000;
+  color: white;
+  height: 100px;
+  width: 200px;
+  top: 30%;
+  left: 10%;
+  background-image: url(./../media/nextbuttonPush.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+#background4 {
+  width: 100%;
+  height: 100%;
+  background-image: url(./../media/backgroundstars1tile.png);
+  background-size: 100%;
+  position: absolute;
+  z-index: 401;
+}
+
+#spaceship4_div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 450;
+  margin-left: -300px;
+  margin-top: 100px;
+  transform: rotateZ(90deg);
+}
+
+#spaceship4 {
+  position: absolute;
+  width: 100px;
+  height: 170px;
+  background-image: url(./../media/Spaceship.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  z-index: 450;
+}
+
+#spaceshipHover4 {
+  position: absolute;
+  animation: hover4 3s ease-in-out infinite;
+}
+
+@keyframes hover4 {
+  0% {
+    transform: translate3d(0px, 0px, 0px);
+  }
+  50% {
+    transform: translate3d(20px, 10px, 20px);
+  }
+  100% {
+    transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+#rocketTrail4 {
+  background-image: url(./../media/rocket-trail.png);
+  background-size: 100%;
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  width: 100px;
+  height: 100px;
+  z-index: 59;
+  transform: rotateZ(45deg);
+  margin-top: 80px;
+  z-index: 449;
+  animation: rocketTrailInnOut 0.2s linear infinite alternate;
+}
+
+@keyframes rocketTrailInnOut {
+  0% {
+    transform: translate(0, -5px) rotateZ(45deg);
+  }
+  100% {
+    transform: translate(0, 5px) rotateZ(45deg);
+  }
+}
+
+@keyframes spaceshipMoveTrump {
+  0% {
+    transform: translate(0px, 0px) rotateZ(90deg);
+  }
+  50% {
+    transform: translateX(700px) rotateZ(90deg) scale(1.5);
+  }
+  100% {
+    transform: translate(2000px, 0px) rotateZ(90deg) scale(1.5);
+  }
+}
+
+@keyframes escapeX {
+  0% {
+    transform: translateX(0) rotateZ(45deg);
+  }
+  100% {
+    transform: translateX(800px) rotateZ(45deg);
+  }
+}
+
+@keyframes escapeY {
+  0% {
+    transform: translateY(0) rotateZ(45deg);
+  }
+  100% {
+    transform: translateY(-2000px) rotateZ(-45deg);
+  }
+}
+
+#trumpAsteroid4 {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  top: 50%;
+  left: 50%;
+  z-index: 440;
+  margin-left: 200px;
+  margin-top: 100px;
+  animation: hoverTrump 4s infinite ease-in-out;
+}
+
+@keyframes hoverTrump {
+  0% {
+    transform: translate3d(0px, -20px, 0px);
+  }
+  50% {
+    transform: translate3d(0px, 0px, 0px);
+  }
+  100% {
+    transform: translate3d(0px, -20px, 0px);
+  }
+}
+
+#trump4 {
+  position: absolute;
+  width: 80px;
+  height: 125px;
+  background-image: url(./../media/trumpEdited.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  left: 30%;
+  top: 0%;
+  transform: scaleX(-1);
+  z-index: 441;
+}
+
+@keyframes shrinkTrump {
+  0% {
+    transform: scale(1) scaleX(-1);
+  }
+  100% {
+    transform: scale(0.5) scaleX(-1);
+    opacity: 0;
+  }
+}
+
+#asteroid4 {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background-image: url(./../media/275620.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  top: 50%;
+}
+
+#textDiv4 {
+  position: absolute;
+  width: 150px;
+  height: 120px;
+  z-index: 480;
+  top: 10%;
+  left: 10%;
+  opacity: 1;
+}
+
+#choice1_4 {
+  position: absolute;
+  background-image: url(./../media/buttonTrump.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 56px;
+  width: 250px;
+}
+
+#pickupHover {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: url(./../media/buttonTrumpHover.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  opacity: 0;
+}
+
+#choice2_4 {
+  position: absolute;
+  height: 56px;
+  width: 250px;
+  background-image: url(./../media/buttonEscape.png);
+  background-size: 100%;
+  top: 50%;
+}
+#escapeHover {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: url(./../media/buttonEscapeHover.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  opacity: 0;
+}

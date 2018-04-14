@@ -1,0 +1,483 @@
+/*
+  written by Lennart
+*/
+
+#scene-3 .scene-wrapper {
+  overflow: visible;
+  width: 100%;
+  height: 100%;
+}
+
+#scene-3 .asteroid-highway {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -96px;
+  width: 100%;
+  height: 192px;
+}
+
+#scene-3 .asteroid-highway-wrapper {
+  max-width: 512px;
+  height: 100%;
+  position: relative;
+  margin: auto;
+}
+
+/* -------------- INFO BOX -- */
+
+#text3 {
+  position: absolute;
+  color: #ffc100;
+	width: 500px;
+	font-family: 'Shadows Into Light', cursive;
+	font-size: 2.2rem;
+  font-weight: 500;
+  bottom: 14rem;
+  right: 11rem;
+  z-index: 205;
+  transition: opacity 300ms linear;
+  transform-origin: 50% 50%;
+}
+
+@keyframes textHover {
+  0% {
+    transform: translate(0, 0);
+  }
+    50% {
+    transform: translate(0, 10px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes remove-info-box {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-100vw, 0, 0);
+  }
+}
+
+/* -------------- START BUTTON -- */
+
+#scene-3 .asteroid-start-button {
+  position: absolute;
+  display: block;
+  width: 250px;
+  height: 100px;
+  margin-left: -125px;
+  margin-top: -50px;
+  top: 50%;
+  left: 50%;
+  background-image: url(./../media/startgame.png);
+  background-color: transparent;
+  background-size: 100% auto;
+  transition: transform 200ms linear, opacity 300ms linear;
+  transform-origin: 50% 50%;
+}
+
+#scene-3 .asteroid-start-button span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: url(./../media/startgamePush.png);
+  background-color: transparent;
+  background-size: 100% auto;
+  transition: opacity 150ms ease-out;
+  opacity: 0;
+}
+
+#scene-3 .asteroid-start-button span:hover {
+  opacity: 1;
+}
+
+/* -------------- NEXT BUTTON -- */
+
+#scene-3 .asteroid-next-button {
+  position: absolute;
+  display: block;
+  width: 250px;
+  height: 100px;
+  margin-top: -50px;
+  top: 50%;
+  right: -6144px;
+  background-image: url(./../media/nextbutton.png);
+  background-color: transparent;
+  background-size: 100% auto;
+  transition: transform 3s 2000ms ease-in-out, opacity 300ms linear;
+  transform-origin: 50% 50%;
+}
+
+#scene-3 .asteroid-next-button span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: url(./../media/nextbuttonPush.png);
+  background-color: transparent;
+  background-size: 100% auto;
+  transition: opacity 150ms ease-out;
+  opacity: 0;
+}
+
+#scene-3 .asteroid-next-button span:hover {
+  opacity: 1;
+}
+
+/* -------------- SHIP -- */
+
+#scene-3 .ship {
+  width: 48px;
+  height: 90px;
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  margin-top: -52px;
+  z-index: 4;
+}
+
+#scene-3 .ship-wrapper {
+  width: 100%;
+  height: 100%;
+  background-image: url(./../media/Spaceship.png);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center center;
+  transition: transform 150ms ease-in-out 25ms;
+  transform: rotateZ(90deg);
+  transform-origin: 50% 50%;
+}
+
+/* -------------- ARROWS -- */
+
+#scene-3 .asteroid-arrow-up,
+#scene-3 .asteroid-arrow-down {
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: 64px;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 500ms linear;
+}
+
+#scene-3 .asteroid-arrow-up {
+  top: 0px;
+  border-bottom: 50px solid rgba(0, 100, 0, 0.5);
+}
+
+#scene-3 .asteroid-arrow-down {
+  bottom: 0px;
+  border-top: 50px solid rgba(0, 100, 0, 0.5);
+}
+
+#scene-3 .asteroid-arrow-up:hover {
+  border-bottom: 50px solid rgba(0, 100, 0, 0.2);
+}
+
+#scene-3 .asteroid-arrow-down:hover {
+  border-top: 50px solid rgba(0, 100, 0, 0.2);
+}
+
+/* -------------- COUNTDOWN -- */
+
+#scene-3 .asteroid-countdown {
+  position: absolute;
+  top: 50%;
+  margin-top: -43px;
+  left: 50%;
+  margin-left: -40px;
+  z-index: 10;
+  width: 80px;
+  height: 76px;
+  z-index: 101;
+  display: none;
+}
+
+#scene-3 .asteroid-countdown-wrapper {
+  position: relative;
+}
+
+#scene-3 .asteroid-countdown span {
+  opacity: 0;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 4rem;
+  width: 100%;
+  text-align: center;
+}
+
+@keyframes asteroid-countdown {
+  0% {
+    transform: translate3d(0, -50px, 0);
+    opacity: 0;
+  }
+  25% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+  90% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(0, 50px, 0);
+    opacity: 0;
+  }
+}
+
+/* -------------- ASTEROIDS -- */
+
+#scene-3 .asteroid-ball {
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  z-index: 11;
+}
+
+@keyframes asteroids-translation {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-6144px, 0, 0);
+  }
+}
+
+#scene-3 .asteroid-ball:hover {
+  background-color: red;
+}
+
+#scene-3 .asteroid-wrapper {
+  position: relative;
+  height: 192px;
+  width: 64px;
+  background-image: url(./../media/firetrans.gif);
+  background-size: auto 100%;
+  background-position: 50% 0;
+  transform-origin: 32px 32px;
+  transform: translate3d(128px, 0, 0) rotateZ(90deg);
+}
+
+#scene-3 .asteroid-body {
+  width: 64px;
+  height: 64px;
+  background-image: url(./../media/275620.png);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: 0;
+  opacity: 0.95;
+  transform-origin: 50% 50%;
+}
+
+#scene-3 .asteroid-ball:nth-child(1) {
+  top: 64px;
+  left: 448px;
+}
+#scene-3 .asteroid-ball:nth-child(2) {
+  top: 0;
+  left: 512px;
+}
+#scene-3 .asteroid-ball:nth-child(3) {
+  top: 128px;
+  left: 900px;
+}
+#scene-3 .asteroid-ball:nth-child(4) {
+  top: 64px;
+  left: 850px;
+}
+#scene-3 .asteroid-ball:nth-child(5) {
+  top: 0px;
+  left: 1150px;
+}
+#scene-3 .asteroid-ball:nth-child(6) {
+  top: 128px;
+  left: 1280px;
+}
+#scene-3 .asteroid-ball:nth-child(7) {
+  top: 64px;
+  left: 1450px;
+}
+#scene-3 .asteroid-ball:nth-child(8) {
+  top: 0px;
+  left: 1750px;
+}
+#scene-3 .asteroid-ball:nth-child(9) {
+  top: 64px;
+  left: 1850px;
+}
+#scene-3 .asteroid-ball:nth-child(10) {
+  top: 128px;
+  left: 2150px;
+}
+#scene-3 .asteroid-ball:nth-child(11) {
+  top: 0;
+  left: 2000px;
+}
+#scene-3 .asteroid-ball:nth-child(12) {
+  top: 64px;
+  left: 2300px;
+}
+#scene-3 .asteroid-ball:nth-child(13) {
+  top: 0px;
+  left: 2600px;
+}
+#scene-3 .asteroid-ball:nth-child(14) {
+  top: 128px;
+  left: 2500px;
+}
+#scene-3 .asteroid-ball:nth-child(15) {
+  top: 64px;
+  left: 2800px;
+}
+#scene-3 .asteroid-ball:nth-child(16) {
+  top: 128px;
+  left: 3100px;
+}
+#scene-3 .asteroid-ball:nth-child(17) {
+  top: 64px;
+  left: 3150px;
+}
+#scene-3 .asteroid-ball:nth-child(18) {
+  top: 0px;
+  left: 3450px;
+}
+#scene-3 .asteroid-ball:nth-child(19) {
+  top: 128px;
+  left: 3300px;
+}
+#scene-3 .asteroid-ball:nth-child(20) {
+  top: 64px;
+  left: 3600px;
+}
+#scene-3 .asteroid-ball:nth-child(21) {
+  top: 128px;
+  left: 3900px;
+}
+#scene-3 .asteroid-ball:nth-child(22) {
+  top: 0px;
+  left: 3800px;
+}
+#scene-3 .asteroid-ball:nth-child(23) {
+  top: 0px;
+  left: 3950px;
+}
+#scene-3 .asteroid-ball:nth-child(24) {
+  top: 64px;
+  left: 4200px;
+}
+#scene-3 .asteroid-ball:nth-child(25) {
+  top: 0px;
+  left: 4300px;
+}
+#scene-3 .asteroid-ball:nth-child(26) {
+  top: 128px;
+  left: 4500px;
+}
+
+@keyframes asteroid-jiggle {
+  0% {
+    transform: translate3d(-1px, 1px, 0) rotateZ(2deg);
+  }
+  25% {
+    transform: translate3d(1px, 1px, 0) rotateZ(-2deg);
+  }
+  75% {
+    transform: translate3d(-1px, -1px, 0) rotateZ(2deg);
+  }
+  100% {
+    transform: translate3d(1px, -1px, 0) rotateZ(-2deg);
+  }
+}
+
+/* -------------- OFFSIDE REGIONS -- */
+#scene-3 .asteroid-offside {
+  position: absolute;
+  width: 100vw;
+  height: 50vh;
+}
+
+#scene-3 .asteroid-offside-top {
+  top: -100px;
+}
+
+#scene-3 .asteroid-offside-bottom {
+  bottom: -100px;
+}
+
+/* -------------- CRASH -- */
+
+#scene-3 .asteroid-crash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  background-color: rgba(200, 0, 0, 0.2);
+  opacity: 0.9;
+  z-index: 10000;
+  display: none;
+  background-image: url(./../media/splat.png);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}
+
+#scene-3 .asteroid-crash a span {
+  display: block;
+  position: absolute;
+  width: 220px;
+  height: 40px;
+  top: 50%;
+  left: 50%;
+  margin-left: -110px;
+  margin-top: -20px;
+  color: #eee;
+  font-size: 2rem;
+  transform: rotateZ(-10deg);
+  transform-origin: 50% 50%;
+  text-align: center;
+}
+
+#scene-3 .asteroid-crash span:hover {
+  color: white;
+}
+
+#scene-3 .scene-wrapper > a {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+#scene-3 .asteroid-zone {
+  position: absolute;
+  left: 52px;
+  top: -4px;
+  width: 80px;
+  height: 200px;
+  border: 2px dotted yellow;
+  border-radius: 3px;
+  opacity: 0;
+}
+
+@keyframes zone-blinking {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

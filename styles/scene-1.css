@@ -1,0 +1,522 @@
+
+
+/**Reset button**/
+
+#scene-1-resetDiv {
+  background-image: url(./../media/restart.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 300px;
+  height: 120px;
+  position: absolute;
+  z-index: 99;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  left: 50%;
+  top: 50%;
+  display: none;
+}
+
+#scene-1-reset {
+  background-image: url(./../media/restartPush.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 300px;
+  height: 120px;
+  position: absolute;
+  opacity: 0;
+}
+
+#scene-1-reset:hover {
+  opacity: 1;
+}
+
+/**Launch buttons**/
+
+#launch-buttons {
+  position: relative;
+  background-image: url(./../media/Degrees1.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 150px;
+  width: 350px;
+  top: 48%;
+  left: 50%;
+  z-index: 58;
+  margin-left: 0px;
+  margin-top: 0px;
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 500ms, transform 250ms;
+  transform-origin: 50% 120%;
+}
+
+#launch-buttons a span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 150ms linear, transform 250ms ease-in-out;
+  transform: translateZ(0);
+}
+
+#launch-60deg,
+#launch-90deg,
+#launch-120deg {
+  position: absolute;
+  background-size: 100%;
+  height: 150px;
+}
+
+#launch-60deg {
+  left: 232px;
+  top: 8px;
+  width: 120px;
+}
+
+#launch-90deg {
+  left: 100px;
+  top: 5px;
+  width: 160px;
+  height: 70px;
+}
+
+#launch-120deg {
+  left: 0;
+  top: 10px;
+  width: 125px;
+}
+
+#launch-60deg span {
+  background-image: url(./../media/degrees3.png);
+}
+#launch-90deg span {
+  background-image: url(./../media/degrees2.png);
+}
+#launch-120deg span {
+  background-image: url(./../media/degrees4.png);
+}
+
+/**Text explaining what to do**/
+
+#text1 {
+  position: absolute;
+  color: #ffc100;
+  width: 250px;
+  text-align: center;
+  font-family: "Shadows Into Light", cursive;
+  font-size: 2.4rem;
+  font-weight: 1000;
+  z-index: 60;
+  top: 50%;
+  left: 50%;
+	margin-left: -150px;
+	margin-top: -150px;
+}
+
+#textArrow {
+  position: absolute;
+  transform: rotate(100deg);
+  background-repeat: no-repeat;
+  background-image: url(./../media/arrowText.png);
+  background-size: 100%;
+  width: 100px;
+  height: 100px;
+  left: 25%;
+  top: 120%;
+}
+
+/**Keyframes for explaining text**/
+
+@keyframes textHover {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, -10px);
+  }
+  100% {
+    transform: translate(0, 0px);
+  }
+}
+
+/**Spaceship and it's belonging assets**/
+
+#rocket_div {
+  position: absolute;
+  width: 120px;
+  height: 210px;
+  z-index: 60;
+  top: 0;
+  margin-top: -210px;
+  left: 50%;
+  margin-left: 120px;
+  margin-top: 90px;
+  transform-origin: 50% 90%;
+}
+
+#scene-1 .rocket {
+  width: 120px;
+  height: 200px;
+  top: 50.5%;
+  left: 50%;
+  margin-left: 120px;
+  margin-top: 90px;
+  transform-origin: 50% 90%;
+  z-index: 61;
+}
+
+#rocket {
+  background-image: url(./../media/Spaceship.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 60;
+}
+
+#rocketTrail {
+  background-image: url(./../media/rocket-trail.png);
+  background-size: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100px;
+  height: 100px;
+  z-index: 59;
+  transform: rotateZ(45deg);
+  margin-left: -50px;
+  margin-top: 7px;
+  opacity: 0;
+}
+
+#flames {
+  position: absolute;
+  height: 250px;
+  width: 150px;
+  z-index: 64;
+  background: url(./../media/firetrans.gif);
+  background-size: 100%;
+  background-repeat: repeat-x;
+  top: 50%;
+  left: 50%;
+  margin-left: -190px;
+  margin-top: 58px;
+  opacity: 0;
+}
+
+#starpling {
+  position: absolute;
+  height: 60px;
+  width: 50px;
+  z-index: 99;
+  top: 50%;
+  left: 50%;
+  margin-top: -250px;
+  margin-left: 152px;
+  background-image: url(./../media/starpling.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  opacity: 1;
+  transform: scale(0);
+}
+
+/**Keyframes for spaceship and it's assets**/
+
+@keyframes rocketTrailTakeoffInnOut {
+  0% {
+    transform: translate(0, -5px) rotateZ(45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, 5px) rotateZ(45deg);
+    opacity: 1;
+  }
+}
+
+@keyframes scaleBlink {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes rocket-boost-60deg {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, -50vh, 0);
+  }
+}
+
+@keyframes rocket-boost-flame {
+  0% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes rocket-inertia {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  30% {
+    transform: translate3d(0, 10px, 0);
+  }
+  80% {
+    transform: translate3d(0, -1px, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes rocket-leave {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, -50vh, 0);
+  }
+}
+
+@keyframes rocket-crash1 {
+  0% {
+    transform: translate3d(0, 0, 0) scale(0.5) rotateZ(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(0, 50vh, 0) scale(0) rotateZ(900deg);
+    opacity: 0;
+  }
+}
+
+@keyframes rocket-crash2 {
+  0% {
+    transform: translate3d(0, 0, 0) scale(0.5) rotateZ(0);
+  }
+  100% {
+    transform: translate3d(-450px, 95vh, 0) scale(0.2) rotateZ(900deg);
+  }
+}
+
+/**City background**/
+
+#flag-div{
+	position: absolute;
+	top:50%;
+	left:50%;
+	margin-left: -258px;
+	margin-top: 93px;
+}
+
+#euro-flag {
+  background: url(./../media/euroflag.png);
+  background-size: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 70px;
+  height: 45px;
+  z-index: 55;
+}
+#northkorea-flag {
+  background: url(./../media/northkorea-flag.png);
+  background-size: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 70px;
+  height: 45px;
+  z-index: 54;
+}
+
+#bylag {
+  background: url(./../media/bylag3.png);
+  background-size: 800px 600px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 57;
+  margin-top: 130px;
+}
+
+#bylag2 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 54;
+  background-image: url(./../media/backgroundcity.png);
+  background-size: 800px;
+  background-repeat: repeat-x;
+  background-position: center left;
+  transform: translate(0, 13%);
+}
+
+#ground {
+  position: absolute;
+  background-color: rgb(35, 35, 40);
+  width: 100%;
+  top: 50%;
+  margin-top: 300px;
+  height: 400px;
+  z-index: 57;
+}
+
+#whiteLine {
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  top: 50%;
+  background-color: rgb(255, 255, 255);
+  margin-top: 297px;
+  z-index: 60;
+}
+
+/**Jet bomber**/
+
+#fighterJetX {
+  position: absolute;
+  z-index: 50;
+  height: 10%;
+  width: 10%; 
+  left: 200px;
+	top: 50%;
+	left: 50%;
+}
+
+#fighterJetY {
+  position: absolute;
+  background-image: url(./../media/fighterJet.png);
+  background-size: 100%;
+  background-repeat: no-repeat; 
+  height: 100%;
+  width: 100%;
+}
+
+/**Jet bomber Keyframes**/
+
+@keyframes jetAnimX {
+  0% {
+    transform: translateX(-2000px) rotateZ(20deg);
+  }
+  100% {
+    transform: translateX(2000px) rotateZ(-10deg);
+  }
+}
+
+@keyframes jetAnimY {
+  0% {
+    transform: translateY(-300px);
+  }
+  50% {
+    transform: translateY(100px);
+  }
+  100% {
+    transform: translateY(-300px);
+  }
+}
+
+/**Tanks**/
+
+#northkorea-tank {
+  position: absolute;
+  background-size: 100%;
+  background-image: url(./../media/nkTank.png);
+  background-repeat: no-repeat;
+  height: 100px;
+  width: 150px;
+  top: 50%;
+  right: 110%;
+  z-index: 56;
+  margin-top: 240px;
+  transform-origin: bottom left;
+}
+
+#northkorea-asset {
+  position: absolute;
+  background-size: 100%;
+  background-image: url(./../media/nkTank-2.png);
+  background-repeat: no-repeat;
+  height: 100px;
+  width: 150px;
+  margin-left: 59px;
+  transform-origin: 10% 10%;
+}
+
+#northkorea-tank2 {
+  position: absolute;
+  background-size: 100%;
+  background-image: url(./../media/nkTank.png);
+  background-repeat: no-repeat;
+  height: 100px;
+  width: 150px;
+  top: 50%;
+  left: 120%;
+  z-index: 56;
+  margin-top: 240px;
+  transform-origin: bottom left;
+}
+
+#northkorea-asset2 {
+  position: absolute;
+  background-size: 100%;
+  background-image: url(./../media/nkTank-2.png);
+  background-repeat: no-repeat;
+  height: 100px;
+  width: 150px;
+  margin-left: 59px;
+  transform-origin: 10% 10%;
+}
+
+/**keyframes for the tanks**/
+
+@keyframes asset-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-20deg);
+  }
+}
+
+@keyframes tank-animation {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(25vw, 0, 0);
+  }
+}
+
+@keyframes tank-animation2 {
+  0% {
+    transform: translate3d(0, 0, 0) scaleX(-1);
+  }
+  100% {
+    transform: translate3d(-30vw, 0, 0) scaleX(-1);
+  }
+}

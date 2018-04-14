@@ -1,0 +1,573 @@
+<html>
+<!-- Link til to different Css scenenes  -->
+
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Iceland" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/scaffold.css" />
+  <link rel="stylesheet" href="styles/scene-0.css" />
+  <link rel="stylesheet" href="styles/scene-1.css" />
+  <link rel="stylesheet" href="styles/scene-2.css" />
+  <link rel="stylesheet" href="styles/scene-3.css" />
+  <link rel="stylesheet" href="styles/scene-4.css" />
+  <link rel="stylesheet" href="styles/scene-4-5.css" />
+  <link rel="stylesheet" href="styles/scene-5.css" />
+  <link rel="stylesheet" href="styles/scene-6.css" />
+  <link rel="stylesheet" href="styles/scene-7.css" />
+  <link rel="stylesheet" href="styles/scene-animations.css" />
+</head>
+
+<body>
+  <div id="container">
+
+    <!-- scene animation targets -->
+    <span class="targets" id="scene-0-start"></span>
+    <span class="targets" id="scene-1-start"></span>
+    <span class="targets" id="scene-1-crash1"></span>
+    <span class="targets" id="scene-1-crash2"></span>
+    <span class="targets" id="scene-2-start"></span>
+    <span class="targets" id="scene-3-start"></span>
+    <span class="targets" id="scene-3-engage"></span>
+    <span class="targets" id="scene-4-start"></span>
+    <span class="targets" id="scene-4-pickup"></span>
+    <span class="targets" id="scene-4-5-explosion"></span>
+    <span class="targets" id="scene-5-start"></span>
+    <span class="targets" id="scene-6-start"></span>
+    <span class="targets" id="scene-7-start"></span>
+
+    <!-- development navigation -->
+    <div id="sceneframe-navigation">
+      <div class="wrapper">
+        <ul id="sceneframe-indices">
+          <li>
+            <a href="#scene-0-start">#0 Start</a>
+          </li>
+          <li>
+            <a href="#scene-1-start">#1 Launch pad</a>
+          </li>
+          <li>
+            <a href="#scene-2-start">#2 Earth orbit</a>
+          </li>
+          <li>
+            <a href="#scene-3-start">#3 Asteroid belt</a>
+          </li>
+          <li>
+            <a href="#scene-4-start">#4 Trump</a>
+          </li>
+          <li>
+            <a href="#scene-4-5-explosion">#4-5 Tweetsplosion</a>
+          </li>
+          <li>
+            <a href="#scene-5-start">#5 Mars orbit</a>
+          </li>
+          <li>
+            <a href="#scene-6-start">#6 Mars descent</a>
+          </li>
+          <li>
+            <a href="#scene-7-start">#7 Mars landing</a>
+          </li>
+        </ul>
+        <div id="sceneframe-icon"></div>
+      </div>
+    </div>
+
+    <div id="scenes">
+
+      <!-- scene #1 - Launch pad -->
+      <div class="scene direction-down" id="scene-1">
+        <div class="scene-wrapper">
+          <div class="stars-background">
+            <div class="stars-background-alpha"></div>
+            <div class="stars-background-beta"></div>
+            <div class="stars-background-gamma"></div>
+          </div>
+
+          <div id="text1">
+            <p>Choose an angle!</p>
+            <div id=textArrow></div>
+          </div>
+
+          <div id="bylag"></div>
+          <div id="bylag2"></div>
+          <div id="whiteLine"></div>
+          <div id="ground"></div>
+
+          <div class="rocket">
+            <div class="rocket-r">
+              <div class="rocket-x">
+                <div class="rocket-y">
+                  <div class="rocket-body"></div>
+                  <div class="rocket-window"></div>
+                  <div class="rocket-fins"></div>
+                  <div class="rocket-flame">
+                    <!-- for the flame jiggle animation -->
+                    <div class="rocket-flame-wrapper"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="weaponAnimation">
+            <div id="weaponShoot"></div>
+          </div>
+          <div id="weaponLaunch"></div>
+          <div id="fighterJetX">
+            <div id="fighterJetY"></div>
+          </div>
+          <div id="northkorea-tank">
+            <div id="northkorea-asset"></div>
+          </div>
+          <div id="northkorea-tank2">
+            <div id="northkorea-asset2"></div>
+          </div>
+          <div id="flag-div">
+            <div id="euro-flag"></div>
+            <div id="northkorea-flag"></div>
+          </div>
+          <div id="flames"></div>
+          <div id="starPling"></div>
+
+          <div id="launch-buttons">
+            <a id="launch-60deg" href="#scene-2-start">
+              <!-- span for hover effect -->
+              <span/>
+            </a>
+            <a id="launch-90deg" href="#scene-1-crash1">
+              <span />
+            </a>
+            <a id="launch-120deg" href="#scene-1-crash2">
+              <span />
+            </a>
+          </div>
+
+          <div id="scene-1-resetDiv">
+            <a href="#scene-1-start" id="scene-1-reset"></a>
+          </div>
+        </div>
+      </div>
+      <!-- end #scene-1 -->
+
+      <!-- Scene #0 positioned after #1 to enable #0 being an overlay of #1-->
+      <!-- Scene #0 Startscreen -->
+      <div class="scene direction-down" id="scene-0">
+        <div class="scene-wrapper">
+          <div class="start-blackout"></div>
+          <div class="start-overlay">
+            <div id="frontlogo"> </div>
+            <h1>THE LAST HOPE</h1>
+            <h2>When a word war actually becomes a world war.</h2>
+            <p>
+              Kim Jong Un laid bare his true nature as destroyer of the world peace and stability and begged for a nuclear war. And a nuclear
+              war it became. The earth we all knew has become a war zone we all feared. Kim Jong Un has been provoked, Trump
+              has been provoked and it all went down on us. Every continent is destroyed to the grown. Your only hope is
+              the prehistoric hero who made his own human colony on Mars; Elon Musk. Your rocket is ready to depart. Take
+              a last look back and get ready to leave earth once and for all. And remember…never call a man fat and ugly,
+              he might destroy the world.
+            </p>
+            <a href="#scene-1-start" class="button">
+              BEGIN YOUR JOURNEY
+            </a>
+            <a href="https://github.com/squeese/PRO100-gruppe13">
+              github.com/PRO100-gruppe13
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- end #scene-0 -->
+
+     
+      <!-- scene #2 Launch success / Earth orbit -->
+      <div class="scene direction-down" id="scene-2">
+        <div class="scene-wrapper">
+          <div class="stars-background">
+            <div class="stars-background-alpha"></div>
+            <div class="stars-background-beta"></div>
+            <div class="stars-background-gamma"></div>
+          </div>
+          <div id="earthMove">
+            <img id="earth" src="media/earth2.png">
+          </div>
+          <div id="spaceshipX">
+            <div id="spaceshipY">
+              <div id="spaceshipRotate">
+                <div id="spaceshipHover">
+                  <img id="spaceshipImg" src="media/spaceship.png">
+                  <img id="rocketT" src="media/rocket-trail.png">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="manualPopup">
+            <a href="#scene-3-start">
+              <div id="manualButton">
+                <div id="text2">Switch to manual!
+                  <div id="textArrow"></div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div id="warningPopup">
+            <div id="warning">
+              <div id="warningText">
+                <p>ASTROIDS INCOMING</p>
+              </div>
+              <div id="warningIcon"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end #scene-2 -->
+
+      <!-- scene #3 Asteroid belt -->
+      <div class="scene direction-right" id="scene-3">
+        <div class="scene-wrapper">
+          <div class="stars-background">
+            <div class="stars-background-alpha"></div>
+            <div class="stars-background-beta"></div>
+            <div class="stars-background-gamma"></div>
+          </div>
+          <div class="asteroid-offside asteroid-offside-top"></div>
+          <div class="asteroid-offside asteroid-offside-bottom"></div>
+          <div class="asteroid-highway">
+            <div class="asteroid-highway-wrapper">
+              <div class="asteroid-ball">
+                <div class="asteroid-wrapper">
+                  <div class="asteroid-body"></div>
+                </div>
+              </div>
+              <div class="asteroid-ball">
+                <div class="asteroid-wrapper">
+                  <div class="asteroid-body"></div>
+                </div>
+              </div>
+              <div class="asteroid-ball">
+                <div class="asteroid-wrapper">
+                  <div class="asteroid-body"></div>
+                </div>
+              </div>
+              <div class="asteroid-ball">
+                <div class="asteroid-wrapper">
+                  <div class="asteroid-body"></div>
+                </div>
+              </div>
+              <div class="asteroid-ball">
+                <div class="asteroid-wrapper">
+                  <div class="asteroid-body"></div>
+                </div>
+              </div>
+              <div class="asteroid-ball">
+                <div class="asteroid-wrapper">
+                  <div class="asteroid-body"></div>
+                </div>
+              </div>
+              <div class="asteroid-ball">
+                <div class="asteroid-wrapper">
+                  <div class="asteroid-body"></div>
+                </div>
+              </div>
+              <div class="asteroid-ball">
+                <div class="asteroid-wrapper">
+                  <div class="asteroid-body"></div>
+                </div>
+              </div>
+              <div class="asteroid-ball">
+                <div class="asteroid-wrapper">
+                  <div class="asteroid-body"></div>
+                </div>
+              </div>
+              <div class="asteroid-ball">
+                <div class="asteroid-wrapper">
+                  <div class="asteroid-body"></div>
+                </div>
+              </div>
+              <div class="asteroid-ball">
+                <div class="asteroid-wrapper">
+                  <div class="asteroid-body"></div>
+                </div>
+              </div>
+              <div class="asteroid-ball">
+                <div class="asteroid-wrapper">
+                  <div class="asteroid-body"></div>
+                </div>
+              </div>
+              <div class="asteroid-ball">
+                <div class="asteroid-wrapper">
+                  <div class="asteroid-body"></div>
+                </div>
+              </div>
+              <div class="asteroid-ball">
+                <div class="asteroid-wrapper">
+                  <div class="asteroid-body"></div>
+                </div>
+              </div>
+              <div class="asteroid-ball">
+                <div class="asteroid-wrapper">
+                  <div class="asteroid-body"></div>
+                </div>
+              </div>
+              <div class="asteroid-ball">
+                <div class="asteroid-wrapper">
+                  <div class="asteroid-body"></div>
+                </div>
+              </div>
+              <div class="asteroid-ball">
+                <div class="asteroid-wrapper">
+                  <div class="asteroid-body"></div>
+                </div>
+              </div>
+              <div class="asteroid-ball">
+                <div class="asteroid-wrapper">
+                  <div class="asteroid-body"></div>
+                </div>
+              </div>
+              <div class="asteroid-ball">
+                <div class="asteroid-wrapper">
+                  <div class="asteroid-body"></div>
+                </div>
+              </div>
+              <div class="asteroid-ball">
+                <div class="asteroid-wrapper">
+                  <div class="asteroid-body"></div>
+                </div>
+              </div>
+              <div class="asteroid-ball">
+                <div class="asteroid-wrapper">
+                  <div class="asteroid-body"></div>
+                </div>
+              </div>
+              <div class="asteroid-ball">
+                <div class="asteroid-wrapper">
+                  <div class="asteroid-body"></div>
+                </div>
+              </div>
+              <div class="asteroid-ball">
+                <div class="asteroid-wrapper">
+                  <div class="asteroid-body"></div>
+                </div>
+              </div>
+              <div class="asteroid-ball">
+                <div class="asteroid-wrapper">
+                  <div class="asteroid-body"></div>
+                </div>
+              </div>
+              <div class="asteroid-ball">
+                <div class="asteroid-wrapper">
+                  <div class="asteroid-body"></div>
+                </div>
+              </div>
+              <div class="asteroid-ball">
+                <div class="asteroid-wrapper">
+                  <div class="asteroid-body"></div>
+                </div>
+              </div>
+              <div id="text3">
+                <p>Move the spaceship by hovering with your mouse. Be careful for astroids!</p>
+                <div id=textArrow></div>
+              </div>
+              <a href="#scene-3-engage" class="asteroid-start-button">
+                <span />
+              </a>
+              <a href="#scene-4-start" class="asteroid-next-button">
+                <span />
+              </a>
+              <div class="asteroid-countdown">
+                <div class="asteroid-countdown-wrapper">
+                  <span>3</span>
+                  <span>2</span>
+                  <span>1</span>
+                </div>
+              </div>
+              <div class="asteroid-zone"></div>
+              <div class="asteroid-arrow-up"></div>
+              <div class="asteroid-arrow-down"></div>
+              <div class="asteroid-crash">
+                <a href="#scene-3-start">
+                  <span>try again</span>
+                </a>
+              </div>
+              <div class="ship">
+                <div class="ship-wrapper"></div>
+              </div>
+            </div>
+          </div>
+          <a href="#scene-4-start">
+            <span>skip challenge</span>
+          </a>
+        </div>
+      </div>
+      <!-- end #scene-3 -->
+
+      <!-- scene #4 Trump -->
+      <div class="scene direction-right" id="scene-4">
+        <div class="scene-wrapper">
+          <div id="background4"></div>
+
+          <div id="trumpAsteroid4">
+            <div id="trump4"></div>
+            <div id="asteroid4"></div>
+          </div>
+          <div id="spaceship4_div">
+            <div id="spaceship4_Y_div">
+              <div id="spaceshipHover4">
+                <div id="spaceship4"></div>
+                <div id="rocketTrail4"></div>
+              </div>
+            </div>
+          </div>
+
+          <div id="textDiv4">
+            <div id="pickup">
+              <div id="choice1_4">
+                <a id="pickupHover" href="#scene-4-5-explosion"></a>
+              </div>
+            </div>
+            <div id="escape">
+              <div id="choice2_4">
+                <a id="escapeHover" href="#scene-5-start"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end #scene-4 -->
+
+      <!-- scene #4-5 Tweetsplosion -->
+      <div class="scene direction-right" id="scene-4-5">
+        <div class="scene-wrapper">
+          <div id="background451"></div>
+          <div id="background452"></div>
+          <div id="background453"></div>
+
+          <div id="spaceship45Div">
+            <div id="spaceship45Thrust"></div>
+            <div id="spaceship45"></div>
+            <div class="electricalSparks" id="electricalSparks1"></div>
+            <div class="electricalSparks" id="electricalSparks2"></div>
+            <div class="electricalSparks" id="electricalSparks3"></div>
+            <div id="tweetContainer">
+              <div class="tweet" id="tweet1"></div>
+              <div class="tweet" id="tweet2"></div>
+              <div class="tweet" id="tweet3"></div>
+              <div class="tweet" id="tweet4"></div>
+              <div class="tweet" id="tweet5"></div>
+              <div class="tweet" id="tweet6"></div>
+              <div class="tweet" id="tweet7"></div>
+              <div class="tweet" id="tweet8"></div>
+              <div class="tweet" id="tweet9"></div>
+              <div class="tweet" id="tweet10"></div>
+              <div class="tweet" id="tweet11"></div>
+              <div class="tweet" id="tweet12"></div>
+            </div>
+          </div>
+          <div id="explosion"></div>
+          <div id="back45div">
+            <a id="back45" href="#scene-4-start"></a>
+          </div>
+        </div>
+      </div>
+      <!-- end #scene-4-5 -->
+
+      <!-- scene #5 Mars orbit -->
+      <div class="scene direction-right" id="scene-5">
+        <div class="scene-wrapper">
+          <div class="stars-background">
+            <div class="stars-background-alpha"></div>
+            <div class="stars-background-beta"></div>
+            <div class="stars-background-gamma"></div>
+          </div>
+          <div id="mars-planet">
+            <div class="mars-planet-wrapper"></div>
+          </div>
+          <div id="mars-earth"></div>
+          <div id="mars-jet-trail">
+            <div class="mars-jet-trail-mask"></div>
+          </div>
+          <div id="mars-ship">
+            <div class="mars-ship-whopper">
+              <div class="mars-ship-wrapper">
+                <div class="mars-ship-window"></div>
+                <div class="mars-land-button">
+                  <a href="#scene-6-start" class="button">
+                    LAND ON MARS
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end #scene-5 -->
+
+      <!-- scene #6 Mars descent -->
+      <div class="scene direction-up" id="scene-6">
+        <div class="scene-wrapper">
+          <div class="stars-background">
+            <div class="stars-background-alpha"></div>
+            <div class="stars-background-beta"></div>
+            <div class="stars-background-gamma"></div>
+          </div>
+          <img id="mars6" src="media/marsLandscape.png">
+          <div id="spaceshipDescent">
+            <img id="spaceshipA" src="media/spaceship.png">
+            <div id="rocketTrailDiv">
+              <img id="rocketT6" src="media/rocket-trail.png">
+            </div>
+          </div>
+          <div id="nextDiv">
+            <a href="#scene-7-start" id="nestetmp1"></a>
+          </div>
+        </div>
+      </div>
+      <!-- end #scene-6 -->
+
+
+      <!-- scene #7 Mars home -->
+      <div class="scene direction-up" id="scene-7">
+        <div class="scene-wrapper">
+          <div class="stars-background">
+            <div class="stars-background-alpha"></div>
+            <div class="stars-background-beta"></div>
+            <div class="stars-background-gamma"></div>
+          </div>
+          <div id="mars-ground"> </div>
+          <img id="mars-ground" src="media/marsLandscape.png" />
+          <img id="earth7" src="media/earth.png" />
+          <img id="house" src="media/housemedsolceller.png" />
+          <div id="teslax">
+            <div id="teslay">
+              <img src="media/tesla1_480.png" />
+            </div>
+          </div>
+          <img id="tesla" src="media/tesla1_480.png" />
+          <div id="welcome">
+            <div class="wrapper">
+              <div id="arrow"></div>
+              <p>
+                <!-- span instead of <br/>, since it wasnt allowed -->
+                <span>Congratulation,</span>
+                <span>you made it !</span>
+                <span>Welcome to my planet Mars</span>
+                <span> - Elon Musk</span>
+              </p>
+            </div>
+          </div>
+          <div id="elon">
+            <div id="elon-body">
+              <div id="elon-hair"></div>
+              <div id="elon-ears"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end #scene-4 -->
+
+    </div>
+    <!-- end #scenes -->
+
+  </div>
+  <!-- end #container -->
+</body>
+
+</html>

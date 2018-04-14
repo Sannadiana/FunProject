@@ -1,0 +1,116 @@
+
+#scene-5 #mars-earth {
+  position: absolute;
+  left: 320px;
+  top: 55px;
+  width: 20px;
+  height: 20px;
+  background-image: url(./../media/earth2.png);
+  background-size: 100% auto;
+  opacity: 0.6;
+}
+
+#scene-5 #mars-planet {
+  position: absolute;
+  right: -537px;
+  top: 50%;
+  margin-top: -200px;
+  width: 507px;
+  height: 507px;
+  transition: transform 250ms ease-out;
+}
+
+#scene-5 #mars-planet .mars-planet-wrapper {
+  width: 100%;
+  height: 100%;
+  background-image: url(./../media/marsorginal.png);
+  background-size: 100% auto;
+  transition: transform 300ms ease-in;
+  transform: translate3d(-30px, 10px, 0);
+}
+
+#scene-5 #mars-ship {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 230px;
+  height: 390px;
+  transform: translate3d(0, 60%, 0) rotateZ(105deg);
+  transform-origin: 0% 0%;
+}
+
+#scene-5 #mars-ship .mars-ship-whopper {
+  width: 100%;
+  height: 100%;
+  transition: transform 300ms ease-out;
+}
+
+#scene-5 #mars-ship .mars-ship-wrapper {
+  width: 100%;
+  height: 100%;
+  background-image: url(./../media/Spaceship.png);
+  background-size: 100% auto;
+  transition: transform 300ms ease-in;
+  position: relative;
+}
+
+#scene-5 #mars-ship .mars-ship-window {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  margin-top: -45px;
+  margin-left: -45px;
+  top: 160px;
+  left: 50%;
+  background-image: url(./../media/Spaceship.png);
+  background-size: 230px auto;
+  background-position: 50% 38%; 
+}
+
+@keyframes window-ship-bounce {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -10px, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+#scene-5 #mars-jet-trail {
+  position: absolute;
+  top: 50px;
+  left: 0px;
+  width: 300px;
+  height: 80px;
+  overflow: hidden;
+  transition: transform 900ms ease-in-out, opacity 900ms;
+  transition-delay: 300ms;
+  transform: translate3d(100%, 0, 0);
+  opacity: 0;
+}
+
+#scene-5 #mars-jet-trail .mars-jet-trail-mask {
+  width: 100%;
+  height: 100%;
+  background-image: url(./../media/jet_trail_opaque.png);
+  background-size: 100% auto;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  transition: transform 900ms ease-in-out;
+  transition-delay: 300ms;
+  transform: translate3d(-100%, 0, 0);
+}
+
+#scene-5 .mars-land-button {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#scene-5 .mars-land-button a {
+  opacity: 0;
+  transform: translate3d(-100px, 150px, 0) rotateZ(-90deg);
+}

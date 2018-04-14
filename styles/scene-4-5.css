@@ -1,0 +1,299 @@
+
+
+#back45div {
+  position: absolute;
+  width: 200px;
+  height: 80px;
+  background-image: url(./../media/Restart.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  opacity: 0;
+}
+#back45 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url(./../media/restartPush.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  opacity: 0.01;
+}
+#back45div:hover ~ #back45,
+#back45:hover {
+  opacity: 1;
+}
+
+#background451 {
+  height: 100%;
+  width: 200%;
+  left: 0;
+  background-image: url(./../media/backgroundstars1tile.png);
+  position: absolute;
+  background-size: 50%;
+}
+#background452 {
+  height: 100%;
+  width: 200%;
+  background-image: url(./../media/onlystars.png);
+  position: absolute;
+  background-size: 50%;
+}
+@keyframes background45move {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -100%;
+  }
+}
+
+#spaceship45Div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 340px;
+  width: 200px;
+  transform: rotate(90deg) translate(-50%, 50%);
+}
+@keyframes opacity0 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+#spaceship45 {
+  position: absolute;
+  background-image: url(./../media/Spaceship.png);
+  height: 340px;
+  width: 200px;
+  background-size: 100%;
+  z-index: 461;
+}
+@keyframes spaceshipMove {
+  0% {
+    top: 50%;
+    left: 50%;
+  }
+  20% {
+    top: 55%;
+    left: 55%;
+  }
+  40% {
+    top: 55%;
+    left: 45%;
+  }
+  60% {
+    top: 45%;
+    left: 50%;
+  }
+  80% {
+    top: 45%;
+    left: 55%;
+  }
+  100% {
+    top: 50%;
+    left: 50%;
+  }
+}
+
+#spaceship45Thrust {
+  height: 200px;
+  width: 200px;
+  top: 45%;
+  background-image: url(./../media/rocket-trail.png);
+  background-size: 100%;
+  position: absolute;
+  z-index: 460;
+  transform: rotate(45deg);
+}
+@keyframes rocketTrailInnOut45 {
+  0% {
+    transform: translate(0, -5px) rotateZ(45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, 5px) rotateZ(45deg);
+    opacity: 1;
+  }
+}
+
+#tweetContainer {
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  z-index: 450;
+}
+.tweet {
+  position: absolute;
+  background-image: url(./../media/twitterLogo.png);
+  background-size: 100%;
+  height: 100px;
+  width: 100px;
+}
+@keyframes tweetFly1 {
+  0% {
+    transform: translate(0, 0) scale(1) rotateZ(30deg);
+  }
+  100% {
+    transform: translate(400px, 100px) scale(0) rotateZ(30deg);
+  }
+}
+@keyframes tweetFly2 {
+  0% {
+    transform: translate(0, 0) scale(1) rotateZ(60deg);
+  }
+  100% {
+    transform: translate(300px, 200px) scale(0) rotateZ(60deg);
+  }
+}
+@keyframes tweetFly3 {
+  0% {
+    transform: translate(0, 0) scale(1) rotateZ(90deg);
+  }
+  100% {
+    transform: translate(200px, 300px) scale(0) rotateZ(90deg);
+  }
+}
+@keyframes tweetFly4 {
+  0% {
+    transform: translate(0, 0) scale(1) rotateZ(120deg);
+  }
+  100% {
+    transform: translate(0px, 500px) scale(0) rotateZ(120deg);
+  }
+}
+@keyframes tweetFly5 {
+  0% {
+    transform: translate(0, 0) scale(1) rotateZ(150deg);
+  }
+  100% {
+    transform: translate(-200px, 300px) scale(0) rotateZ(150deg);
+  }
+}
+@keyframes tweetFly6 {
+  0% {
+    transform: translate(0, 0) scale(1) rotateZ(180deg);
+  }
+  100% {
+    transform: translate(-300px, 200px) scale(0) rotateZ(180deg);
+  }
+}
+@keyframes tweetFly7 {
+  0% {
+    transform: translate(0, 0) scale(1) rotateZ(210deg);
+  }
+  100% {
+    transform: translate(-500px, 0) scale(0) rotateZ(210deg);
+  }
+}
+@keyframes tweetFly8 {
+  0% {
+    transform: translate(0, 0) scale(1) rotateZ(240deg);
+  }
+  100% {
+    transform: translate(-300px, -200px) scale(0) rotateZ(240deg);
+  }
+}
+@keyframes tweetFly9 {
+  0% {
+    transform: translate(0, 0) scale(1) rotateZ(270deg);
+  }
+  100% {
+    transform: translate(-200px, -300px) scale(0) rotateZ(270deg);
+  }
+}
+@keyframes tweetFly10 {
+  0% {
+    transform: translate(0, 0) scale(1) rotateZ(300deg);
+  }
+  100% {
+    transform: translate(0px, -500px) scale(0) rotateZ(300eg);
+  }
+}
+@keyframes tweetFly11 {
+  0% {
+    transform: translate(0, 0) scale(1) rotateZ(330deg);
+  }
+  100% {
+    transform: translate(200px, -300px) scale(0) rotateZ(330deg);
+  }
+}
+@keyframes tweetFly12 {
+  0% {
+    transform: translate(0, 0) scale(1) rotateZ(360deg);
+  }
+  100% {
+    transform: translate(300px, -200px) scale(0) rotateZ(360deg);
+  }
+}
+
+.electricalSparks {
+  background-image: url(./../media/electricalSparks.png);
+  background-size: 100%;
+  height: 150px;
+  width: 150px;
+  z-index: 490;
+  position: absolute;
+  opacity: 0;
+}
+#electricalSparks1 {
+  top: 50%;
+  left: 20%;
+}
+#electricalSparks2 {
+  top: 20%;
+  left: 30%;
+}
+#electricalSparks3 {
+  top: -10%;
+  left: 10%;
+}
+@keyframes sparksFlicker {
+  0% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  15% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes opacity0 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+#explosion {
+  background-image: url(./../media/explosion-gif-transparent-8.gif);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 900px;
+  height: 700px;
+  top: 50%;
+  left: 50%;
+  margin-left: -300px;
+  margin-top: -300px;
+  opacity: 0;
+}
+@keyframes opacity1 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
