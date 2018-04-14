@@ -1,5 +1,5 @@
 # FunProject
-Fictional interactive story, containing a small game.
+Fictional interactive story, containing a small game. Coded in HTML and CSS.
 
 Run the index.html document in a text editor like Brackets and you will be able to try it out, enjoy ! 
 
